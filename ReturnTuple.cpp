@@ -32,5 +32,12 @@ int main() {
     auto [success, message] = cities.FindCountry("Volgograd");
     // cout << get<1>(t) << endl; // Not exists
     cout << success << " " << message << endl; // 0 Not exists
+
+    // при использование кортежей и пар, нужно быть более аккуратными, так как они ухудшают иногда читаемость кода
+    // например
+    map<string, pair<double, double>> cities_example;
+    for (const auto& item : cities_example) {
+        cout << item.second.first << endl; // трудно прочесть 
+    }
     return 0;
 }
