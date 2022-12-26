@@ -25,7 +25,11 @@ private:
 
 int main() {
     Cities cities;
-    auto t = cities.FindCountry("Volgograd");
-    cout << get<1>(t) << endl; // Not exists
+    bool success;
+    string messages;
+    // auto t = cities.FindCountry("Volgograd");
+    tie(success, messages) = cities.FindCountry("Volgograd");
+    // cout << get<1>(t) << endl; // Not exists
+    cout << success << " " << messages << endl; // 0 Not exists
     return 0;
 }
